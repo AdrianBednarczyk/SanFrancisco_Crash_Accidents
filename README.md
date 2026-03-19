@@ -1,4 +1,4 @@
-# **🚗 San Francisco Traffic Accidents – Data Analysis Project**
+# **🚗 San Francisco Crash Accidents – Data Analysis Project**
 
 This project presents an end-to-end data analysis of traffic accidents in San Francisco using SQL and Power BI. 
 This project analyzes road traffic accidents in San Francisco using a full data analytics workflow, starting from raw data ingestion, through data cleaning and transformation in SQL, and ending with analytical reporting in Power BI.The dataset was first loaded into a SQL database from source files, where the entire data preparation process was performed. This included creating database tables, validating data integrity, and cleaning inconsistent or missing records.
