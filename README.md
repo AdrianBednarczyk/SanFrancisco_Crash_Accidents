@@ -98,6 +98,7 @@ ________________________________________
 
 
 # 📂 Repository Structure 
+```text
 SanFrancisco_Crash_Accidents/
 │
 ├── SQL Queries/                         # List of Queries used during the work
