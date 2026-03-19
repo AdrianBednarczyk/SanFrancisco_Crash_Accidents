@@ -84,6 +84,8 @@ ________________________________________
 * Built on Gold layer; supports filtering by time, KPI's, party type, race, sex and others crash and victims attribute
 * Interactive exploration of trips with weather and event context
 
+<img width="1562" height="736" alt="Sample of Project" src="https://github.com/user-attachments/assets/1e72cf23-ffdc-4244-bb5a-d8f286adbe05" />
+
 ________________________________________
 
 
