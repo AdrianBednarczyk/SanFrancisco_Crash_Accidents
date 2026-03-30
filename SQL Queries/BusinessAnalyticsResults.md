@@ -1,6 +1,7 @@
 /** Some fast cases to solved to show skills in SQL **/
 
-/**1. Does seat belt use affect the number of road accident casualties? Analyze the data on casualties and determine whether seat belt 
+**1. Does seat belt use affect the number of road accident casualties?**
+Analyze the data on casualties and determine whether seat belt 
 use reduces the severity of accidents. For each safety equipment category, calculate:
 - the number of people involved in accidents
 - the total number of injuries
@@ -11,7 +12,7 @@ use reduces the severity of accidents. For each safety equipment category, calcu
 Then compare the results between:
 - the use of seat belts
 - the lack of seat belt use
-Finally, indicate in which cases the lack of seat belt use most increases the risk of death in an accident.**/
+Finally, indicate in which cases the lack of seat belt use most increases the risk of death in an accident.
 
 WITH Safety_Stats AS (SELECT
 	COUNT(*) AS Participant,
@@ -37,7 +38,10 @@ FROM Safety_Stats;
 
 
 
-/** 2. Which days of the week have the highest number of accidents and how their ranking changes from year to year **/
+
+
+
+**2. Which days of the week have the highest number of accidents and how their ranking changes from year to year**
 
 SELECT
 year,
@@ -60,7 +64,10 @@ ORDER BY year desc;
 
 
 
-/**3. What are the top 3 times of day with the highest number of injuries and how has their ranking changed over time? **/
+
+
+
+**3. What are the top 3 times of day with the highest number of injuries and how has their ranking changed over time?**
 
 
 WITH TOP3_whole_range AS (
@@ -122,7 +129,10 @@ FROM Prev_period;
 
 
 
-/**4.Which time of day and day of the week combinations are most dangerous in terms of the number of injuries? **/
+
+
+
+**4.Which time of day and day of the week combinations are most dangerous in terms of the number of injuries?**
 
 
 WITH SUMIK AS (SELECT 
@@ -148,7 +158,10 @@ WHERE Ranks <=3;
 
 
 
-/** 5.Which vehicle types are most often involved in accidents resulting in death or serious injury? **/
+
+
+
+**5.Which vehicle types are most often involved in accidents resulting in death or serious injury?**
 
 
 WITH Agregate AS (SELECT
@@ -174,7 +187,10 @@ SELECT
 <img width="352" height="341" alt="image" src="https://github.com/user-attachments/assets/13782049-b6af-4e00-a3b5-dca1335aaef9" />
 
 
-/**6. Which party roles (driver, passenger, pedestrian) have the highest number of injured or killed in accidents? **/
+
+
+
+**6. Which party roles (driver, passenger, pedestrian) have the highest number of injured or killed in accidents?**
 
 WITH TopTotalInjuredPart AS (
 SELECT 
@@ -214,7 +230,10 @@ FROM TopTotalInjuredPart;
 
 <img width="293" height="68" alt="image" src="https://github.com/user-attachments/assets/a0aa46fe-5436-40e9-97fb-b0ea1ddb070d" />
 
-/**7. Which 10 specific dates had the highest number of accidents throughout the period analyzed?**/
+
+
+
+**7. Which 10 specific dates had the highest number of accidents throughout the period analyzed?**
 
 SELECT
 	COUNT(DISTINCT dc.case_id_pkey) AS Total_Accidents,
@@ -229,7 +248,9 @@ LIMIT 10;
 <img width="237" height="242" alt="image" src="https://github.com/user-attachments/assets/e46af1f1-977d-4f68-9a70-e08e621aa646" />
 
 
-/**8.How has the number of accidents involving drunk drivers changed over time?**/
+
+
+**8.How has the number of accidents involving drunk drivers changed over time?**
 
 WITH New_Sobriety AS (SELECT 
 	case_id_pkey,
