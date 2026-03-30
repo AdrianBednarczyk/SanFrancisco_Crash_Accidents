@@ -62,6 +62,16 @@ By solving these technical challenges, this project demonstrates a core suite of
 
 ________________________________________
 
+## Key Insights
+
+- Seatbelt usage significantly reduces fatality rates in traffic accidents  
+- Accident frequency peaks during commuting hours, indicating higher risk during peak traffic  
+- Data required extensive cleaning due to inconsistencies and missing relationships between tables  
+- Certain factors (e.g. safety equipment usage, time, and conditions) strongly influence accident severity  
+
+👉 Full detailed analysis available in `BusinessAnalyticsResults.md`
+
+________________________________________
 
 # 🔧 Tools & Technologies 
 
