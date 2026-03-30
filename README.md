@@ -69,7 +69,7 @@ ________________________________________
 * Data ingestion from raw files
 * Data validation and cleaning
 * Creation of relational tables
-* Analytical queries|
+* Analytical queries
 * Joins, aggregations and window functions
 
 **Power BI**
