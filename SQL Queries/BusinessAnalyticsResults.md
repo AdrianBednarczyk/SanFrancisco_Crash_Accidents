@@ -70,7 +70,7 @@ ________________________________________
 
 # 3. What are the top 3 times of day with the highest number of injuries and how has their ranking changed over time?
 
-
+```sql
 WITH TOP3_whole_range AS (
 SELECT
 DENSE_RANK()OVER(ORDER BY SUM(dv.number_injured) DESC) Ranking, 
@@ -125,7 +125,7 @@ CASE
 	WHEN Ranking = PREV THEN "no change" ELSE "change"
 END AS rank_diff
 FROM Prev_period;
-
+```
 
 <img width="496" height="415" alt="image" src="https://github.com/user-attachments/assets/855ded92-4e24-464c-9709-25539903ef31" />
 
@@ -134,7 +134,7 @@ ________________________________________
 
 # 4.Which time of day and day of the week combinations are most dangerous in terms of the number of injuries?
 
-
+```sql
 WITH SUMIK AS (SELECT 
 SUM(dv.number_injured) AS Total,
 CONCAT(dc.time_of_day_range,' ','&',' ',DAYNAME(dc.clean_date)) AS Combination
@@ -153,6 +153,7 @@ FROM SUMIK)
 SELECT *
 FROM Ranking
 WHERE Ranks <=3;
+```
 
 <img width="252" height="91" alt="image" src="https://github.com/user-attachments/assets/59655609-045d-42ff-95a6-47e9e9b46c84" />
 
@@ -161,7 +162,7 @@ ________________________________________
 
 # 5.Which vehicle types are most often involved in accidents resulting in death or serious injury?
 
-
+```sql
 WITH Agregate AS (SELECT
 dp.stwd_vehicle_type,
 dv.collision_severity,
@@ -181,6 +182,7 @@ SELECT
 			WHEN collision_severity = 'Fatal' THEN Total_Killed ELSE 0 END)AS Fatal
 	FROM Agregate
     GROUP BY stwd_vehicle_type;
+```
 
 <img width="352" height="341" alt="image" src="https://github.com/user-attachments/assets/13782049-b6af-4e00-a3b5-dca1335aaef9" />
 
@@ -190,6 +192,7 @@ ________________________________________
 
 # 6. Which party roles (driver, passenger, pedestrian) have the highest number of injured or killed in accidents?
 
+```sql
 WITH TopTotalInjuredPart AS (
 SELECT 
 dp.party_type,
@@ -225,6 +228,7 @@ SELECT
     Total_Injured AS Liczba,
     'Injured' AS Statistic_Type
 FROM TopTotalInjuredPart;
+```
 
 <img width="293" height="68" alt="image" src="https://github.com/user-attachments/assets/a0aa46fe-5436-40e9-97fb-b0ea1ddb070d" />
 
@@ -233,6 +237,7 @@ ________________________________________
 
 # 7. Which 10 specific dates had the highest number of accidents throughout the period analyzed?
 
+```sql
 SELECT
 	COUNT(DISTINCT dc.case_id_pkey) AS Total_Accidents,
     dd.date_day
@@ -242,6 +247,7 @@ FROM dim_crashes dc
 GROUP BY dd.date_day
 ORDER BY COUNT(DISTINCT dc.case_id_pkey) DESC, dd.date_day ASC
 LIMIT 10;
+```
 
 <img width="237" height="242" alt="image" src="https://github.com/user-attachments/assets/e46af1f1-977d-4f68-9a70-e08e621aa646" />
 
@@ -250,6 +256,7 @@ ________________________________________
 
 # 8.How has the number of accidents involving drunk drivers changed over time?
 
+```sql
 WITH New_Sobriety AS (SELECT 
 	case_id_pkey,
     party_sobriety,
@@ -268,6 +275,7 @@ SELECT
 WHERE dns.New_party_sobriety = 'Had Been Drinking'
 GROUP BY dc.Year_Of_Crash,dns.New_party_sobriety
 ORDER BY dc.Year_Of_Crash DESC;
+```
 
 <img width="403" height="371" alt="image" src="https://github.com/user-attachments/assets/37573883-7926-45a4-8f56-87906848b056" />
 
@@ -275,6 +283,7 @@ ________________________________________
 
 # 9.How many people were injured and how many died in accidents involving drunk drivers?Also provide the percentage of injured and killed victims in this group. Additionally, compare this to drivers who were sober.
 
+```sql
 WITH New_Sobriety AS (SELECT 
 	party_id,
     party_sobriety,
@@ -318,6 +327,7 @@ SELECT
     CONCAT(ROUND(Total_Injured/(Total_Injured+Total_Killed)*100,2),'%') AS Injured_Ratio,
     CONCAT(ROUND(Total_Killed/(Total_Injured+Total_Killed)*100,2),'%') AS Killed_Ratio
 FROM Killed_Injured_NotDrinking;
+```
 
 <img width="573" height="67" alt="image" src="https://github.com/user-attachments/assets/96d640ab-a2e4-4f05-b221-b238e8a42138" />
 
@@ -330,6 +340,7 @@ ________________________________________
 **- The average number of casualties per accident.**
 **Finally, list the three types of collisions with the highest average number of casualties.**
 
+```sql
 SELECT 
 	type_of_collision,
     COUNT(DISTINCT dc.case_id_pkey) AS Total_Accidents,
@@ -370,6 +381,7 @@ LEFT JOIN victims_per_crash vpc
 GROUP BY dc.type_of_collision
 ORDER BY avg_victims_per_crash DESC
 LIMIT 3;
+```
 
 <img width="612" height="93" alt="image" src="https://github.com/user-attachments/assets/d4914c79-b1b2-4ba6-a8d3-3774a2911ab2" />
 ________________________________________
@@ -382,6 +394,7 @@ ________________________________________
 **- What was the average number of victims per accident in each group.
 Additionally, check whether the results differ between: male drivers and female drivers.**
 
+```sql
 WITH victims_per_crash AS (
     SELECT
         case_id_pkey,
@@ -427,7 +440,7 @@ GROUP BY
     d.party_sex
 ORDER BY
     avg_victims_per_crash DESC;
-
+```
 	
 <img width="662" height="135" alt="image" src="https://github.com/user-attachments/assets/21d089c6-5dd9-4f14-831c-34fb8f5490ac" />
 
