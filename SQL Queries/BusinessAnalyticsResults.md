@@ -184,6 +184,7 @@ WHERE Ranks <=3;
 **Conclusions:**
 
 Most Dangerous Combinations (Top 3)
+
 Afternoon & Wednesday
 Ranking: 1
 
