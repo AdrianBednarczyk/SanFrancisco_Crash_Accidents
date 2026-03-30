@@ -46,6 +46,7 @@ ________________________________________
 
 # 2. Which days of the week have the highest number of accidents and how their ranking changes from year to year
 
+```sql
 SELECT
 year,
 day,
@@ -62,7 +63,7 @@ GROUP BY
 YEAR(dc.clean_date),DAYNAME(dc.clean_date)) tt
 WHERE Ranking =1
 ORDER BY year desc;
-
+```
 <img width="352" height="411" alt="image" src="https://github.com/user-attachments/assets/4575de35-87d8-4a10-bb28-f3be87369892" />
 
 ________________________________________
