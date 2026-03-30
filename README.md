@@ -64,10 +64,12 @@ ________________________________________
 
 # 🔍 Key Insights
 
-- Seatbelt usage significantly reduces fatality rates in traffic accidents  
-- Accident frequency peaks during commuting hours, indicating higher risk during peak traffic  
-- Data required extensive cleaning due to inconsistencies and missing relationships between tables  
-- Certain factors (e.g. safety equipment usage, time, and conditions) strongly influence accident severity  
+- Critical Moment: Wednesday afternoons (Ranking 1) are the most dangerous time of the year.
+- High fatality rate of frontal collisions: Although there are almost three times fewer head-on collisions than rear-end collisions, they result in more fatalities (23 vs. 20), which indicates their greater impact.
+- Weekend Trend: The second-risk time is Friday afternoon (Ranking 2). This may be due to increased traffic or the rush before the end of the workweek.
+- A clear downward trend (2023–2025): Over the past three years, we have observed a steady decline in the number of accidents caused by drinking. The number of incidents decreased from 163 (in 2023) to 129 (in 2025), which is similar to the level in 2020.
+- Dominance of side impacts: Broadside collisions are by far the most common (almost 20,000 events) and generate the largest number of fatalities (72) and injuries (over 26,000).
+
 
 👉 Full detailed analysis available in `BusinessAnalyticsResults.md`
 
