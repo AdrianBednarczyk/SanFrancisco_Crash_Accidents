@@ -69,7 +69,8 @@ WITH Safety_Stats AS (
        OR victim_safety_equip_1 = 'Lap/Shoulder Harness Used' 
     GROUP BY victim_safety_equip_1
 )
-SELECT * FROM Safety_Stats;```
+SELECT * FROM Safety_Stats;
+```
 
 
 <img width="722" height="73" alt="Ekren screen " src="https://github.com/user-attachments/assets/b377c843-99e8-4e3e-9ef0-890816e61958" />
