@@ -39,6 +39,12 @@ SELECT * FROM Safety_Stats;
 
 <img width="292" height="57" alt="image" src="https://github.com/user-attachments/assets/e15e0623-4319-4b74-9f1a-caafb6298205" />
 
+**Conlusions:**
+Although almost every participant in both groups sustains some type of injury (over 99% of those injured), the key difference lies in the mortality rate:
+
+Increased risk: The risk of death without a seat belt (0.73%) is over 10 times higher than with one (0.07%).
+
+Do seat belts affect the number of casualties? Yes, primarily their final outcome. Seat belts don't prevent the accident itself, but they determine whether an injured passenger survives.
 ________________________________________
 
 
