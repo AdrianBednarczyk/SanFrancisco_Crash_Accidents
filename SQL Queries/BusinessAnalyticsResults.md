@@ -35,7 +35,10 @@ FROM Safety_Stats;
 
 <img width="292" height="57" alt="image" src="https://github.com/user-attachments/assets/e15e0623-4319-4b74-9f1a-caafb6298205" />
 
+
+
 /** 2. Which days of the week have the highest number of accidents and how their ranking changes from year to year **/
+
 SELECT
 year,
 day,
@@ -55,7 +58,10 @@ ORDER BY year desc;
 
 <img width="352" height="411" alt="image" src="https://github.com/user-attachments/assets/4575de35-87d8-4a10-bb28-f3be87369892" />
 
+
+
 /**3. What are the top 3 times of day with the highest number of injuries and how has their ranking changed over time? **/
+
 
 WITH TOP3_whole_range AS (
 SELECT
@@ -114,7 +120,10 @@ FROM Prev_period;
 
 <img width="496" height="415" alt="image" src="https://github.com/user-attachments/assets/855ded92-4e24-464c-9709-25539903ef31" />
 
+
+
 /**4.Which time of day and day of the week combinations are most dangerous in terms of the number of injuries? **/
+
 
 WITH SUMIK AS (SELECT 
 SUM(dv.number_injured) AS Total,
@@ -137,7 +146,11 @@ WHERE Ranks <=3;
 
 <img width="252" height="91" alt="image" src="https://github.com/user-attachments/assets/59655609-045d-42ff-95a6-47e9e9b46c84" />
 
+
+
 /** 5.Which vehicle types are most often involved in accidents resulting in death or serious injury? **/
+
+
 WITH Agregate AS (SELECT
 dp.stwd_vehicle_type,
 dv.collision_severity,
