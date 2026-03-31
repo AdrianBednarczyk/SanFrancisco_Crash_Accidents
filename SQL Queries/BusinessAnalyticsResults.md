@@ -535,5 +535,11 @@ ORDER BY
 <img width="662" height="135" alt="image" src="https://github.com/user-attachments/assets/21d089c6-5dd9-4f14-831c-34fb8f5490ac" />
 
 
+**Conclusions:**
 
+Analyzing the avg_victims_per_crash column (average number of victims per crash), the following conclusions can be drawn:
+
+No simple correlation: The data does not clearly confirm that the youngest drivers (under 25 years of age) cause the highest number of fatal accidents.
+
+Highest average: The highest rate (1.49) was observed in the 25-40 age group (men).
 
